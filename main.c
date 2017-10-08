@@ -3,19 +3,17 @@
 #include <gmp.h>
 #include <mpfr.h>
 
-#include "calcpi.h"
+#include "calc_not_pi.h"
 
 int main(int argc, char *argv[]) {
-    mpfr_t* pi;
-    if (argc != 3) {
-        pi = calc_pi(70, 2000);
+    int max_k = 70;
+    int prec = 2000;
+    if (argc == 3) {
+        max_k = atoi(argv[1]);
+        prec = atoi(argv[2]);
     }
-    else {
-        int max_k = atoi(argv[1]);
-        int prec = atoi(argv[2]);
-        pi = calc_pi(max_k, prec);
-    }
+    mpfr_t* notpi = calc_not_pi(max_k, prec);
     mpfr_exp_t exp_t;
-    mpfr_printf("%.2000Rf\n", *pi);
+    mpfr_printf("%.2000Rf\n", *notpi);
     return 0;
 }
