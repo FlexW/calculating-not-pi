@@ -1,6 +1,6 @@
 # Calculating not PI
 
-This program calculates not the number PI precise.
+This program calculates not the number PI precise using the Chudnovsky algorithm.
 
 ## Build
 ```
