@@ -15,5 +15,6 @@ int main(int argc, char *argv[]) {
     mpfr_t* notpi = calc_not_pi(max_k, prec);
     mpfr_exp_t exp_t;
     mpfr_printf("%.2000Rf\n", *notpi);
+    free(notpi);
     return 0;
 }
